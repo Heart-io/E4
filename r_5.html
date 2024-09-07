@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .section {
+            margin-top: 30px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(sec => sec.classList.add('hidden'));
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+    </script>
+</head>
+<body>
+    <h1>Survey: Discover More About Yourself</h1>
+    
+    <form id="surveyForm">
+        <!-- Section 1: Easy Questions -->
+        <div id="section1" class="section">
+            <div class="question">
+                <label for="q1">1. What is your favorite color?</label>
+                <input type="text" id="q1" name="q1" required>
+            </div>
+            <div class="question">
+                <label for="q2">2. How do you prefer to spend your weekends?</label>
+                <input type="text" id="q2" name="q2" required>
+            </div>
+            <!-- Add remaining questions for Section 1 here -->
+            <button type="button" onclick="showSection('section2')">Next</button>
+        </div>
+
+        <!-- Section 2: Thought-Provoking Questions -->
+        <div id="section2" class="section hidden">
+            <div class="question">
+                <label for="q11">11. What is something you wish you could do more often?</label>
+                <input type="text" id="q11" name="q11" required>
+            </div>
+            <div class="question">
+                <label for="q12">12. If you could live anywhere in the world, where would it be and why?</label>
+                <input type="text" id="q12" name="q12" required>
+            </div>
+            <!-- Add remaining questions for Section 2 here -->
+            <button type="button" onclick="showSection('section3')">Next</button>
+        </div>
+
+        <!-- Section 3: Deeper and Unusual Questions -->
+        <div id="section3" class="section hidden">
+            <div class="question">
+                <label for="q21">21. If you could have any superpower, what would it be and how would you use it?</label>
+                <input type="text" id="q21" name="q21" required>
+            </div>
+            <div class="question">
+                <label for="q22">22. Do you believe in the concept of destiny or free will?</label>
+                <input type="text" id="q22" name="q22" required>
+            </div>
+            <!-- Add remaining questions for Section 3 here -->
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+</html>
